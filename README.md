@@ -74,11 +74,15 @@ If they do, they should stick to defaults in the above code block.
 The `depth` parameter refers to color depth (3, 4, 8 and 24 refer to the number
 of bits<!-- improve this -->) of should support at least 1 of the above types
 (preferably all of them if possible). If a language only allows one type to be
-supported, the preference is<!-- mention that if enums require some hacky code
-then just go for integers on something -->:
+supported, the preference is:
 1. enum
 2. integers
 3. strings
+
+> **Note**  
+> If enums require hacky code or are hard to use in a given language, integers
+> are preferred instead.
+
 
 If possible, `Dahlia` instances should be:
 - hashable
