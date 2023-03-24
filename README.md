@@ -2,8 +2,12 @@
 
 - [Syntax](#syntax)
 - [Formatting Reference](#formatting-reference)
+  - [ANSI Templates](#ansi-templates)
+  - [ANSI Color Codes](#ansi-color-codes)
+  - [ANSI Style Codes](#ansi-style-codes)
 - [API](#api)
   - [Utility functions](#utility-functions)
+
 
 ## Syntax
 
@@ -15,14 +19,62 @@
 - [ ] &[i-p] for text styles
 - [ ] escaping (how???)
 - [ ] &r for reset
-- [ ] '~' after marker for background
+- [ ] '~' after marker for background (maybe allow custom markers for this too?)
+
+
 
 ## Formatting Reference
 
-**TODO:**
-- [ ] format codes table (i: invert, l: bold, o: italic, etc.)
-- [ ] 3/4/8/24-bit color tables for 0-g (or 0-f?)
-- [ ] include ANSI codes for all of these
+
+### ANSI Templates
+
+Category      | Foreground           | Background
+---           | ---                  | ---
+text styles   | `ESC[{}m`            | `ESC[{}m`
+3-bit colors  | `ESC[{}m`            | `ESC[{}m`
+4-bit colors  | `ESC[{}m`            | `ESC[{}m`
+8-bit colors  | `ESC[38;5;{}m`       | `ESC[48;5;{}m`
+24-bit colors | `ESC[38;2;{};{};{}m` | `ESC[48;2;{};{};{}m`
+
+
+### ANSI Color Codes
+
+Dahlia | 3-bit | 4-bit | 8-bit | 24-bit
+:---:  | :---: | :---: | :---: | :---:
+`0`    | `30`  | `30`  | `0`   | `0 0 0`
+`1`    | `34`  | `34`  | `19`  | `0 0 170`
+`2`    | `32`  | `32`  | `34`  | `0 170 0`
+`3`    | `36`  | `36`  | `37`  | `0 170 170`
+`4`    | `31`  | `31`  | `124` | `170 0 0`
+`5`    | `35`  | `35`  | `127` | `170 0 170`
+`6`    | `33`  | `33`  | `214` | `255 170 0`
+`7`    | `37`  | `37`  | `248` | `170 170 170`
+`8`    | `30`  | `90`  | `240` | `85 85 85`
+`9`    | `34`  | `94`  | `147` | `85 85 255`
+`a`    | `32`  | `92`  | `83`  | `85 255 85`
+`b`    | `34`  | `96`  | `87`  | `85 255 255`
+`c`    | `31`  | `91`  | `203` | `255 85 85`
+`d`    | `35`  | `95`  | `207` | `255 85 255`
+`e`    | `33`  | `93`  | `227` | `255 255 85`
+`f`    | `37`  | `97`  | `15`  | `255 255 255`
+`g`    | `33`  | `33`  | `184` | `221 214 5`
+
+
+### ANSI Style Codes
+
+Dahlia | ANSI  | Effect
+:---:  | :---: | :---
+`i`    | `7`   | Inverse mode
+`j`    | `2`   | Dim mode
+`k`    | `8`   | Hidden mode
+`l`    | `1`   | Bold mode
+`m`    | `9`   | Strikethrough mode
+`n`    | `4`   | Underline mode
+`o`    | `3`   | Italic mode
+`p`    | `5`   | Blinking mode
+`r`    | `0`   | Full reset
+
+
 
 ## API
 
