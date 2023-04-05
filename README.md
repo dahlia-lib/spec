@@ -1,6 +1,10 @@
 # Dahlia Specification
 
 - [Syntax](#syntax)
+  - [Basic formatting](#basic-formatting)
+  - [Custom colors](#custom-colors)
+  - [Background](#background)
+  - [Escaping](#escaping)
 - [Formatting Reference](#formatting-reference)
   - [ANSI Templates](#ansi-templates)
   - [ANSI Color Codes](#ansi-color-codes)
@@ -11,15 +15,19 @@
 
 ## Syntax
 
-
-**TODO:**
-- [ ] &[0-9a-g] for one of the basic 17 colors (maybe remove g? it's kinda
-  useless)
-- [ ] &[#FFFFFF] for custom color
+### Basic formatting
+- [ ] &[0-9a-g] for one of the basic 17 colors (maybe remove g? it's kinda useless)
 - [ ] &[i-p] for text styles
-- [ ] escaping (how???)
 - [ ] &r for reset
-- [ ] '~' after marker for background (maybe allow custom markers for this too?)
+
+### Custom colors
+- [ ] &[#FFFFFF] for custom color
+
+### Background
+- [ ] '~' after marker for background
+
+### Escaping
+- [ ] escaping (how???)
 
 
 
@@ -83,7 +91,7 @@ Dahlia | ANSI  | Effect
 - [x] function sigs for the rest
 - [ ] explain parameters
   - [x] depth
-  - [ ] no_reset
+  - [x] no_reset
   - [ ] no_color (incl. NO_COLOR env var)
   - [ ] marker
 - [ ] explain how print should be close to built-in solution
@@ -125,8 +133,9 @@ If they do, they should stick to defaults in the above code block.
 
 The `depth` parameter refers to color depth (3, 4, 8 and 24 refer to the number
 of bits<!-- improve this -->) of should support at least 1 of the above types
-(preferably all of them if possible). If a language only allows one type to be
-supported, the preference is:
+(preferably all of them if possible). If possible, this parameter should default
+to low depth (4). If a language only allows one type to be supported, the
+preference is:
 1. enum
 2. integers
 3. strings
@@ -134,6 +143,8 @@ supported, the preference is:
 > **Note**  
 > If enums require hacky code or are hard to use in a given language, integers
 > are preferred instead.
+
+The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&r` by default) should be appended at the end of the string if not present yet. Defaults to `false`.
 
 
 If possible, `Dahlia` instances should be:
