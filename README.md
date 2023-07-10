@@ -1,17 +1,33 @@
 # Dahlia Specification
 
-- [Syntax](#syntax)
-  - [Basic formatting](#basic-formatting)
-  - [Custom colors](#custom-colors)
-  - [Background](#background)
-  - [Escaping](#escaping)
-- [Formatting Reference](#formatting-reference)
-  - [ANSI Templates](#ansi-templates)
-  - [ANSI Color Codes](#ansi-color-codes)
-  - [ANSI Style Codes](#ansi-style-codes)
-- [API](#api)
-  - [Utility functions](#utility-functions)
+- [Dahlia Specification](#dahlia-specification)
+  - [Introduction](#introduction)
+  - [Syntax](#syntax)
+    - [Basic formatting](#basic-formatting)
+    - [Custom colors](#custom-colors)
+    - [Background colors](#background-colors)
+    - [Escaping](#escaping)
+  - [Formatting Reference](#formatting-reference)
+    - [ANSI Templates](#ansi-templates)
+    - [ANSI Color Codes](#ansi-color-codes)
+    - [ANSI Style Codes](#ansi-style-codes)
+  - [API](#api)
+    - [Utility functions](#utility-functions)
 
+
+## Introduction
+
+Dahlia is a simple text formatting library for the terminal, inspired by text
+formatting in Minecraft. Text formatting in Dahlia is done by typing a special
+character (`&` by default) followed by a format code and finally the text to be
+formatted, so it works just like in the game.
+
+This document describes the specification for implementing the Dahlia library
+in certain languages.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
+interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 ## Syntax
 
@@ -23,7 +39,7 @@
 ### Custom colors
 - [ ] &[#FFFFFF] for custom color
 
-### Background
+### Background colors
 - [ ] '~' after marker for background
 
 ### Escaping
