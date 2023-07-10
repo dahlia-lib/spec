@@ -32,6 +32,7 @@ interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 ## Syntax
 
 ### Basic formatting
+Basic formatting is done by 
 - [ ] &[0-9a-g] for one of the basic 17 colors (maybe remove g? it's kinda useless)
 - [ ] &[i-p] for text styles
 - [ ] &r for reset
@@ -144,12 +145,12 @@ class Dahlia {
     test() {}
 }
 ```
-Target languages do not have to support the concept of default parameter values.
-If they do, they should stick to defaults in the above code block.
+Target languages CAN support the concept of default parameter values.
+If they do, they SHOULD stick to defaults in the above code block.
 
 The `depth` parameter refers to color depth (3, 4, 8 and 24 refer to the number
-of bits<!-- improve this -->) of should support at least 1 of the above types
-(preferably all of them if possible). If possible, this parameter should default
+of bits<!-- improve this -->) of should support at least 1 of the above types <!--the fuck is this sentence-->
+(preferably all of them if possible). This parameter SHOULD default
 to low depth (4). If a language only allows one type to be supported, the
 preference is:
 1. enum
@@ -160,10 +161,12 @@ preference is:
 > If enums require hacky code or are hard to use in a given language, integers
 > are preferred instead.
 
-The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&r` by default) should be appended at the end of the string if not present yet. Defaults to `false`.
+The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&r` by
+default) should be appended at the end of the string if not present yet.
+Defaults to `false`.
 
 
-If possible, `Dahlia` instances should be:
+`Dahlia` instances SHOULD be:
 - hashable
 - comparable: using `depth`, `no_reset` and `marker` values
 - printable: preferably in a way that's valid syntax, e.g.:
@@ -172,7 +175,7 @@ If possible, `Dahlia` instances should be:
 
 ---
 
-Other languages should implement the following functions:
+Other languages SHOULD implement the following functions:
 
 Method           | Function
 :---:            | :---:
