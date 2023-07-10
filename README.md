@@ -38,7 +38,8 @@ Basic formatting is done by
 - [ ] &r for reset
 
 ### Custom colors
-- [ ] &[#FFFFFF] for custom color
+Any color can be used by using the `&[#XXXXXX]` syntax, where `XXXXXX` is a
+hexadecimal code. Short codes like `&[#FFF]` are not allowed.
 
 ### Background colors
 - [ ] '~' after marker for background
