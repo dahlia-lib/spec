@@ -83,14 +83,14 @@ White      | f      | 37         | 97         | 15         | (255, 255, 255) | #
 
 Name          | Dahlia | ANSI
 :---          | :---:  | :---:
+Hidden        | h      | 8
 Inverse       | i      | 7
 Dim           | j      | 2
-Hidden        | k      | 8
+Blinking      | k      | 5
 Bold          | l      | 1
 Strikethrough | m      | 9
 Underline     | n      | 4
 Italic        | o      | 3
-Blinking      | p      | 5
 `r`    | `0`   | Full reset
 
 
