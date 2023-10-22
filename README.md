@@ -40,7 +40,7 @@ Any color can be used by using the `&[#XXXXXX]` syntax, where `XXXXXX` is a
 
 ### Background colors
 All colors can be applied to the background instead of the text by appending a `~`
-to the marker, e.g. `&~4` is a red background
+to the marker. For instance, `&~4` sets a red background.
 
 ### Escaping
 
