@@ -44,6 +44,8 @@ to the marker. For instance, `&~4` sets a red background.
 
 ### Escaping
 
+The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
+
 
 ## Formatting Reference
 
