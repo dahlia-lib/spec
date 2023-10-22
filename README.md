@@ -10,6 +10,7 @@
   - [ANSI Templates](#ansi-templates)
   - [ANSI Color Codes](#ansi-color-codes)
   - [ANSI Style Codes](#ansi-style-codes)
+  - [ANSI Reset Codes](#ansi-reset-codes)
 - [API](#api)
   - [Utility functions](#utility-functions)
 
@@ -91,7 +92,23 @@ Bold          | l      | 1
 Strikethrough | m      | 9
 Underline     | n      | 4
 Italic        | o      | 3
-`r`    | `0`   | Full reset
+
+
+### ANSI Reset Codes
+
+Reset kind    | Dahlia | ANSI
+:---          | :---:  | :---:
+Full          | `R`    | 0
+Foreground    | `r#`   | 39
+Background    | `r~`   | 49
+Hidden        | `rh`   | 28
+Inverse       | `ri`   | 27
+Dim           | `rj`   | 22
+Blinking      | `rk`   | 25
+Bold          | `rl`   | 22
+Strikethrough | `rm`   | 29
+Underline     | `rn`   | 24
+Italic        | `ro`   | 23
 
 
 
