@@ -34,7 +34,8 @@ Dahlia formatting is done by using a marker (`&` by default) and codes
 (either [color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
 All codes are 1-character long.
 
-![Basic formatting example](assets/basic-formatting.png)
+![Basic formatting: Colors](assets/basic-colors.png)
+![Basic formatting: Styles](assets/styles.png)
 
 ### Custom colors
 Any color can be used by using the `&[#XXXXXX]` syntax, where `XXXXXX` is a
