@@ -34,17 +34,25 @@ Dahlia formatting is done by using a marker (`&` by default) and codes
 (either [color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
 All codes are 1-character long.
 
+![Basic formatting example](assets/basic-formatting.png)
+
 ### Custom colors
 Any color can be used by using the `&[#XXXXXX]` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Short codes like `&[#FFF]` are not allowed.
+
+![Custom color example](assets/custom-colors.png)
 
 ### Background colors
 All colors can be applied to the background instead of the text by appending a `~`
 to the marker. For instance, `&~4` sets a red background.
 
+![Background color example](assets/background.png)
+
 ### Escaping
 
 The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
+
+![Escaping example](assets/escaping.png)
 
 
 ## Formatting Reference
