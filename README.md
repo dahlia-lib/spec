@@ -110,8 +110,9 @@ Italic        | o      | 3
 Reset kind    | Dahlia | ANSI
 :---          | :---:  | :---:
 Full          | `R`    | 0
-Foreground    | `r#`   | 39
-Background    | `r~`   | 49
+Foreground    | `rf`   | 39
+Background    | `rb`   | 49
+Color         | `rc`   | 39 and 49
 Hidden        | `rh`   | 28
 Inverse       | `ri`   | 27
 Dim           | `rj`   | 22
