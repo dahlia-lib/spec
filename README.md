@@ -38,8 +38,8 @@ All codes are 1-character long.
 ![Basic formatting: Styles](assets/styles.png)
 
 ### Custom colors
-Any color can be used by using the `&[#XXXXXX]` syntax, where `XXXXXX` is a
-6-digit hexadecimal code. Short codes like `&[#FFF]` are not allowed.
+Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
+6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to `&#0099cc;`) are allowed.
 
 ![Custom color example](assets/custom-colors.png)
 
