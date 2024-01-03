@@ -6,6 +6,7 @@
   - [Custom colors](#custom-colors)
   - [Background colors](#background-colors)
   - [Escaping](#escaping)
+  - [Resetting](#resetting)
 - [Formatting Reference](#formatting-reference)
   - [ANSI Templates](#ansi-templates)
   - [ANSI Color Codes](#ansi-color-codes)
@@ -54,6 +55,13 @@ to the marker. For instance, `&~4` sets a red background.
 The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
 
 ![Escaping example](assets/escaping.png)
+
+### Resetting
+Applied formatting can be removed by using [reset codes](#ansi-reset-codes).
+`&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl` removes
+the bold formatting.
+
+![Resetting example](assets/resetting.png)
 
 
 ## Formatting Reference
