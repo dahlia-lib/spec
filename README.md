@@ -35,33 +35,34 @@ Dahlia formatting is done by using a marker (`&` by default) and codes
 (either [color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
 All codes are 1-character long.
 
-![Basic formatting: Colors](assets/basic-colors.png)
-![Basic formatting: Styles](assets/styles.png)
+<img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
+<img alt="Basic formatting: Styles" src="assets/styles.png" style="width: 75%">
 
 ### Custom colors
 Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to `&#0099cc;`) are allowed.
 
-![Custom color example](assets/custom-colors.png)
+<img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
+<img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
 
 ### Background colors
 All colors can be applied to the background instead of the text by appending a `~`
 to the marker. For instance, `&~4` sets a red background.
 
-![Background color example](assets/background.png)
+<img alt="Background color example" src="assets/background.png" style="width: 75%">
 
 ### Escaping
 
 The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
 
-![Escaping example](assets/escaping.png)
+<img alt="Escaping example" src="assets/escaping.png" style="width: 75%">
 
 ### Resetting
 Applied formatting can be removed by using [reset codes](#ansi-reset-codes).
 `&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl` removes
 the bold formatting.
 
-![Resetting example](assets/resetting.png)
+<img alt="Resetting example" src="assets/resetting.png" style="width: 75%">
 
 
 ## Formatting Reference
