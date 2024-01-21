@@ -139,10 +139,10 @@ For object-oriented languages (and those capable of implementing an equivalent
 model, e.g. Rust with `struct` + `impl`):
 ```ts
 enum Depth {
-    TTY = 3,
-    LOW = 4,
-    MEDIUM = 8,
-    HIGH = 24
+    Tty = 3,
+    Low = 4,
+    Medium = 8,
+    High = 24
 }
 type DepthString = "tty" | "low" | "medium" | "high"
 type DepthInt = 3 | 4 | 8 | 24
@@ -150,9 +150,9 @@ type DepthInt = 3 | 4 | 8 | 24
 
 class Dahlia {
     constructor(
-        depth: Depth | DepthString | DepthInt = Depth.LOW,
-        no_reset: boolean = false,
-        no_color: boolean? = null,
+        depth: Depth | DepthString | DepthInt = Depth.Low,
+        noReset: boolean = false,
+        noColor: boolean? = null,
         marker: char = '&'
     ) {}
 
@@ -189,7 +189,7 @@ Defaults to `false`.
 - comparable: using `depth`, `no_reset` and `marker` values
 - printable: preferably in a way that's valid syntax, e.g.:
   - Python: `Dahlia(depth=Depth.HIGH, no_reset=False, marker='&')`  
-  - Swift: `Dahlia(depth: Depth.HIGH, no_reset: false, marker: '&')`
+  - Swift: `Dahlia(depth: Depth.high, no_reset: false, marker: '&')`
 
 ---
 
@@ -200,30 +200,28 @@ Method           | Function
 `Dahlia.convert` | `dahlia`
 `Dahlia.print`   | `dprint`
 `Dahlia.input`   | `dinput`
-`Dahlia.test`    | `dtest`
-`Dahlia.reset`   | `dreset`
 
 ```ts
 function dahlia(
   str: string,
   depth: Depth | DepthString | DepthInt = Depth.LOW,
-  no_reset: boolean = false,
-  no_color: boolean? = null
+  noReset: boolean = false,
+  noColor: boolean? = null
 ): string {}
 
 function dprint(
   ...,
   depth: Depth | DepthString | DepthInt = Depth.LOW,
-  no_reset: boolean = false,
-  no_color: boolean? = null,
+  noReset: boolean = false,
+  noColor: boolean? = null,
   ...
 ) {}
 
 function dinput(
   prompt: string,
   depth: Depth | DepthString | DepthInt = Depth.LOW,
-  no_reset: boolean = false,
-  no_color: boolean? = null
+  noReset: boolean = false,
+  noColor: boolean? = null
 ): string {}
 ```
 
