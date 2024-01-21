@@ -43,7 +43,6 @@ Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to `&#0099cc;`) are allowed.
 
 <img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
-<img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
 
 ### Background colors
 All colors can be applied to the background instead of the text by appending a `~`
