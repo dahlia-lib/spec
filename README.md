@@ -132,7 +132,6 @@ Underline     | `rn`   | 24
 Italic        | `ro`   | 23
 
 
-
 ## API
 
 For object-oriented languages (and those capable of implementing an equivalent
@@ -163,37 +162,35 @@ class Dahlia {
     test() {}
 }
 ```
-Target languages CAN support the concept of default parameter values.
+Target languages CAN provide of default parameter values.
 If they do, they SHOULD stick to defaults in the above code block.
 
-The `depth` parameter refers to color depth (3, 4, 8 and 24 refer to the number
-of bits<!-- improve this -->) of should support at least 1 of the above types <!--the fuck is this sentence-->
-(preferably all of them if possible). This parameter SHOULD default
-to low depth (4). If a language only allows one type to be supported, the
-preference is:
+The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ and 2²⁴ colors). All four depths
+MUST be supported. This parameter SHOULD default to low depth (2⁴ colors).
+If a language only allows one type to be supported, the preference is:
 1. enum
 2. integers
 3. strings
 
-> **Note**  
-> If enums require hacky code or are hard to use in a given language, integers
-> are preferred instead.
+> [!note]
+> If enums require hacky code or are inconvenient in the target language, integers are
+> preferred instead.
 
-The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&r` by
-default) should be appended at the end of the string if not present yet.
+The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&R` by
+default) should NOT be appended at the end of the string if not present yet.
 Defaults to `false`.
 
 
 `Dahlia` instances SHOULD be:
 - hashable
 - comparable: using `depth`, `no_reset` and `marker` values
-- printable: preferably in a way that's valid syntax, e.g.:
+- printable: preferably in a way that produces valid syntax, e.g.:
   - Python: `Dahlia(depth=Depth.HIGH, no_reset=False, marker='&')`  
   - Swift: `Dahlia(depth: Depth.high, no_reset: false, marker: '&')`
 
 ---
 
-Other languages SHOULD implement the following functions:
+Other languages MUST implement the following functions:
 
 Method           | Function
 :---:            | :---:
