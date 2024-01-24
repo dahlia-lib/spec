@@ -13,6 +13,7 @@
   - [ANSI Style Codes](#ansi-style-codes)
   - [ANSI Reset Codes](#ansi-reset-codes)
 - [API](#api)
+  - [Target language consistency](#target-language-consistency)
   - [Utility functions](#utility-functions)
 
 
@@ -220,5 +221,26 @@ function dinput(
   noColor: boolean? = null
 ): string {}
 ```
+
+### Target language consistency
+
+To feel native and intuitive within the context of respective programming
+languages, Dahlia implementations SHOULD aim to align with the conventions of
+and built-in solutions provided by the target language.
+
+For example, when implementing the `print` method/function in Python, it SHOULD
+accept `end`, `file`, and `sep` parameters so that it's easier to move to from
+the built-in `print` function.
+
+Similarly, languages providing multiple variants of print functions (e.g.
+`print`, `println`, `printf`), SHOULD have them mirrored in the Dahlia
+implementation (cf. [`dahlia-rs`](https://github.com/dahlia-lib/dahlia-rs) with
+its `dprint!` and `dprintln!` macros).
+
+Furthermore, all identifiers SHOULD follow the naming conventions of the target
+language. For instance, the utility function [`clean_ansi`](#clean_ansi) should
+be named `cleanAnsi` when implemented in TypeScript, since most popular style
+guides suggest camelCase for functions.
+
 
 ### Utility functions
