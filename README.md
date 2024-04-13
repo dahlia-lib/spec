@@ -14,7 +14,13 @@
   - [ANSI Reset Codes](#ansi-reset-codes)
 - [API](#api)
   - [Target language consistency](#target-language-consistency)
+  - [Environment variables](#environment-variables)
+    - [`NO_COLOR`](#no_color)
+    - [`TERM` and `COLORTERM`](#term-and-colorterm)
   - [Utility functions](#utility-functions)
+    - [`clean`](#clean)
+    - [`clean_ansi`](#clean_ansi)
+    - [`showcase`](#showcase)
 
 
 ## Introduction
@@ -243,4 +249,16 @@ be named `cleanAnsi` when implemented in Java, since functions use `camelCase`
 there by convention. In cases where there's no prevalent style guide, you're
 free to pick the style you find most fitting.
 
+### Environment variables
+
+#### `NO_COLOR`
+
+#### `TERM` and `COLORTERM`
+
 ### Utility functions
+
+#### `clean`
+
+#### `clean_ansi`
+
+#### `showcase`
