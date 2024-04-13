@@ -13,9 +13,13 @@
   - [ANSI Style Codes](#ansi-style-codes)
   - [ANSI Reset Codes](#ansi-reset-codes)
 - [API](#api)
+  - [`auto_reset`](#auto_reset)
+  - [`depth`](#depth)
+  - [`marker`](#marker)
+  - [`no_color`](#no_color)
   - [Target language consistency](#target-language-consistency)
   - [Environment variables](#environment-variables)
-    - [`NO_COLOR`](#no_color)
+    - [`NO_COLOR`](#no_color-1)
     - [`TERM` and `COLORTERM`](#term-and-colorterm)
   - [Utility functions](#utility-functions)
     - [`clean`](#clean)
@@ -168,24 +172,6 @@ class Dahlia {
     test() {}
 }
 ```
-Target languages CAN provide of default parameter values.
-If they do, they SHOULD stick to defaults in the above code block.
-
-The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ and 2²⁴ colors). All four depths
-MUST be supported. This parameter SHOULD default to low depth (2⁴ colors).
-If a language only allows one type to be supported, the preference is:
-1. enum
-2. integers
-3. strings
-
-> [!note]
-> If enums require hacky code or are inconvenient in the target language, integers are
-> preferred instead.
-
-The `no_reset` parameter specifies whether the reset code (`\033[0m`; `&R` by
-default) should NOT be appended at the end of the string if not present yet.
-Defaults to `false`.
-
 
 `Dahlia` instances SHOULD be:
 - hashable
@@ -193,6 +179,9 @@ Defaults to `false`.
 - printable: preferably in a way that produces valid syntax, e.g.:
   - Python: `Dahlia(depth=Depth.HIGH, no_reset=False, marker='&')`  
   - Swift: `Dahlia(depth: Depth.high, no_reset: false, marker: '&')`
+
+Target languages CAN provide default parameter values.
+If they do, they SHOULD stick to defaults in the above code block.
 
 ---
 
@@ -227,6 +216,32 @@ function dinput(
   noColor: boolean? = null
 ): string {}
 ```
+
+Just like with the OO approach, target languages CAN provide default parameter
+values. If they do, they SHOULD stick to defaults in the above code block.
+
+### `auto_reset`
+
+The `auto_reset` parameter specifies whether the reset code (`\033[0m`; `&R` by
+default) should be appended at the end of the string if not present yet.
+Defaults to `true`.
+
+### `depth`
+
+The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ and 2²⁴ colors). All
+four depths MUST be supported. This parameter SHOULD default to low depth (2⁴
+colors). If a language only allows one type to be supported, the preference is:
+1. enum
+2. integers
+3. strings
+
+> [!note]
+> If enums require hacky code or are inconvenient in the target language,
+> integers are preferred instead.
+
+### `marker`
+
+### `no_color`
 
 ### Target language consistency
 
