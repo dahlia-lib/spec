@@ -229,18 +229,18 @@ languages, Dahlia implementations SHOULD aim to align with the conventions of
 and built-in solutions provided by the target language.
 
 For example, when implementing the `print` method/function in Python, it SHOULD
-accept `end`, `file`, and `sep` parameters so that it's easier to move to from
-the built-in `print` function.
+accept `end`, `file`, `flush`, and `sep` parameters so that it's easier to move
+from the built-in `print` function.
 
 Similarly, languages providing multiple variants of print functions (e.g.
-`print`, `println`, `printf`), SHOULD have them mirrored in the Dahlia
+`print`, `println`, `printf`) SHOULD have them mirrored in the Dahlia
 implementation (cf. [`dahlia-rs`](https://github.com/dahlia-lib/dahlia-rs) with
 its `dprint!` and `dprintln!` macros).
 
-Furthermore, all identifiers SHOULD follow the naming conventions of the target
+Finally, all identifiers SHOULD follow the naming conventions of the target
 language. For instance, the utility function [`clean_ansi`](#clean_ansi) should
-be named `cleanAnsi` when implemented in TypeScript, since most popular style
-guides suggest camelCase for functions.
-
+be named `cleanAnsi` when implemented in Java, since functions use `camelCase`
+there by convention. In cases where there's no prevalent style guide, you're
+free to pick the style you find most fitting.
 
 ### Utility functions
