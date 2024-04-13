@@ -223,8 +223,9 @@ values. If they do, they SHOULD stick to defaults in the above code block.
 
 ### `auto_reset`
 
-The `auto_reset` parameter specifies whether the reset code (`\033[0m`; `&R` by
-default) should be appended at the end of the string if not present yet.
+The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
+`&R` by default) should be automatically appended to the end of the string if
+not present yet.  
 Defaults to `true`.
 
 ### `depth`
