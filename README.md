@@ -31,8 +31,8 @@
 
 `Welcome to &1Dahlia&r!` → `Welcome to \x1b[34mDahlia\x1b[0m!`
 
-This document describes the specification for implementing the Dahlia library
-in certain languages.
+This document describes the Dahlia library implementation specification in
+certain languages.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
@@ -42,8 +42,8 @@ interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 ## Syntax
 
 ### Basic formatting
-Dahlia formatting is done by using a marker (`&` by default) and codes 
-(either [color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
+Dahlia formatting is done by using a marker (`&` by default) and codes (either
+[color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
 All codes are 1-character long.
 
 <img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
@@ -51,13 +51,14 @@ All codes are 1-character long.
 
 ### Custom colors
 Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
-6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to `&#0099cc;`) are allowed.
+6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to
+`&#0099cc;`) are allowed.
 
 <img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
 
 ### Background colors
-All colors can be applied to the background instead of the text by appending a `~`
-to the marker. For instance, `&~4` sets a red background.
+All colors can be applied to the background instead of the text by appending a
+`~` to the marker. For instance, `&~4` sets a red background.
 
 <img alt="Background color example" src="assets/background.png" style="width: 75%">
 
@@ -69,8 +70,8 @@ The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
 
 ### Resetting
 Applied formatting can be removed by using [reset codes](#ansi-reset-codes).
-`&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl` removes
-the bold formatting.
+`&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl`
+removes the bold formatting.
 
 <img alt="Resetting example" src="assets/resetting.png" style="width: 75%">
 
