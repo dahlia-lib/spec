@@ -16,10 +16,9 @@
   - [`auto_reset`](#auto_reset)
   - [`depth`](#depth)
   - [`marker`](#marker)
-  - [`no_color`](#no_color)
   - [Target language consistency](#target-language-consistency)
   - [Environment variables](#environment-variables)
-    - [`NO_COLOR`](#no_color-1)
+    - [`NO_COLOR`](#no_color)
     - [`TERM` and `COLORTERM`](#term-and-colorterm)
   - [Utility functions](#utility-functions)
     - [`clean`](#clean)
@@ -242,8 +241,6 @@ colors). If a language only allows one type to be supported, the preference is:
 > integers are preferred instead.
 
 ### `marker`
-
-### `no_color`
 
 ### Target language consistency
 
