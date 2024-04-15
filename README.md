@@ -275,6 +275,21 @@ free to pick the style you find most fitting.
 
 #### `NO_COLOR`
 
+All implementations MUST comply with [the `NO_COLOR` standard](https://no-color)
+and support its environment variable. A simple way to implement it is to use
+the [`clean` utility function](#clean):
+
+```rs
+// pseudocode
+
+fn convert(self: Dahlia, string: String) -> String {
+    if no_color {
+        return utils::clean(string);
+    }
+    // actual processing
+}
+```
+
 #### `TERM` and `COLORTERM`
 
 ### Utility functions
