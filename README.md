@@ -13,9 +13,10 @@
   - [ANSI Style Codes](#ansi-style-codes)
   - [ANSI Reset Codes](#ansi-reset-codes)
 - [API](#api)
-  - [`auto_reset`](#auto_reset)
-  - [`depth`](#depth)
-  - [`marker`](#marker)
+  - [Constructor parameters](#constructor-parameters)
+    - [`auto_reset`](#auto_reset)
+    - [`depth`](#depth)
+    - [`marker`](#marker)
   - [Target language consistency](#target-language-consistency)
   - [Environment variables](#environment-variables)
     - [`NO_COLOR`](#no_color)
@@ -220,27 +221,34 @@ function dinput(
 Just like with the OO approach, target languages CAN provide default parameter
 values. If they do, they SHOULD stick to defaults in the above code block.
 
-### `auto_reset`
+### Constructor parameters
+
+#### `auto_reset`
 
 The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
 `&R` by default) should be automatically appended to the end of the string if
-not present yet.  
-Defaults to `true`.
+not present yet. It SHOULD default to `true`.
 
-### `depth`
+#### `depth`
 
-The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ and 2²⁴ colors). All
-four depths MUST be supported. This parameter SHOULD default to low depth (2⁴
-colors). If a language only allows one type to be supported, the preference is:
+The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ or 2²⁴ colors). All
+four depths MUST be supported. If a language only allows one data type to be
+used, the preference is:
 1. enum
 2. integers
 3. strings
 
 > [!note]
-> If enums require hacky code or are inconvenient in the target language,
-> integers are preferred instead.
+> If enums require hacky code or are inconvenient to use in the target language,
+> integers are preferred instead.  
+> Same goes for supporting all data types—support just one if it's not feasible
+> to support all of them.
 
-### `marker`
+
+#### `marker`
+
+The `marker` parameter specifies the character used to mark the beginning of a
+Dahlia formatting code. It MUST be a single character and SHOULD default to `&`.
 
 ### Target language consistency
 
