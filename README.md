@@ -227,23 +227,40 @@ values. If they do, they SHOULD stick to defaults in the above code block.
 
 The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
 `&R` by default) should be automatically appended to the end of the string if
-not present yet. It SHOULD default to `true`.
+not present yet. It MUST be a boolean value and SHOULD default to `true`.
 
 #### `depth`
 
 The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ or 2²⁴ colors). All
-four depths MUST be supported. If a language only allows one data type to be
-used, the preference is:
-1. enum
-2. integers
-3. strings
+four depths MUST be supported.
 
-> [!note]
-> If enums require hacky code or are inconvenient to use in the target language,
-> integers are preferred instead.  
-> Same goes for supporting all data types—support just one if it's not feasible
-> to support all of them.
+At least one of the following data types SHOULD be allowed to represent the
+depth:
+* enum members
+    ```rs
+    enum Depth {
+      TTY     // 3-bit
+      LOW     // 4-bit
+      MEDIUM  // 8-bit
+      HIGH    // 24-bit
+    }
+    ```
+* strings (one of `"tty"`, `"low"`, `"medium"`, `"high"`)
+* integers (one of `3`, `4`, `8`, `24`)
 
+This parameter SHOULD be as flexible as possible and so implementations SHOULD
+allow mixing these types (e.g. `Dahlia(depth: Depth.HIGH)` or
+`Dahlia(depth: "high")` SHOULD both be allowed and mean the same thing). If the
+target language only allows one data type as input, the preference is enums >
+integers > strings (or integers > strings if enums don't exist or are
+inconvenient to use in the target language).
+
+By default, the depth SHOULD be automatically determined based on the
+[`TERM` and `COLORTERM` environment variables](#term-and-colorterm). This
+behavior (and thus the default value) SHOULD be represented by a `None` value if
+one can be supplied in the target language (e.g. through a type union or an
+option type). Otherwise, the aforementioned data types MUST accept an additional
+`Depth.AUTO`, `"auto"`, or `0` value, respectively.
 
 #### `marker`
 
