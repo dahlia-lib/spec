@@ -313,6 +313,13 @@ fn convert(self: Dahlia, string: String) -> String {
 
 #### `clean`
 
+The `clean(string)` utility function MUST strip away all Dahlia codes from a
+string, except for the `&_` escape code which MUST be processed as usual:
+```rs
+clean("&_4 gives &4red")
+// -> "&4 gives red"
+```
+
 #### `clean_ansi`
 
 #### `showcase`
