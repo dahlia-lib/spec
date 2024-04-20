@@ -41,8 +41,8 @@ interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 ## Syntax
 
 ### Basic formatting
-Dahlia formatting is done by using a marker (`&` by default) and codes (either
-[color](#ansi-color-codes) or [style](#ansi-style-codes)) from the list below.
+Basic Dahlia formatting is done by using a marker (`&` by default) followed by a
+[color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list below.
 All codes are 1-character long.
 
 <img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
