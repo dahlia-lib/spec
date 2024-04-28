@@ -183,6 +183,25 @@ fn convert(self: Dahlia, string: String) -> String {
 
 #### `TERM` and `COLORTERM`
 
+When `depth` is set to auto, The `TERM` and `COLORTERM` environment variables
+SHOULD be used to determine the color depth. The following values SHOULD be
+recognized (as regexes):
+
+**`COLORTERM`** (24-bit):
+* `truecolor`
+* `24bit`
+
+**`TERM`**:
+* `dumb` → same as `NO_COLOR=1`
+* anything containing `24-?bit` → `24-bit`
+* `terminator` → `24-bit`
+* `mosh` → `24-bit`
+* anything containing `256` → `8-bit`
+
+If none of the above match, the depth SHOULD default to `4-bit`.
+
+Reading `COLORTERM` is preferred over `TERM` when set.
+
 ### Utility functions
 
 #### `clean`
