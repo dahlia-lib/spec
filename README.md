@@ -28,7 +28,7 @@
 
 ## Introduction
 
-`Welcome to &1Dahlia&r!` → `Welcome to \x1b[34mDahlia\x1b[0m!`
+`Welcome to &2Dahlia&R!` → `Welcome to \x1b[32mDahlia\x1b[0m!`
 
 This document describes the Dahlia library implementation specification in
 certain languages.
