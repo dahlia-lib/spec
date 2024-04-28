@@ -37,7 +37,7 @@ interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 This document describes the Dahlia library implementation specification. The
 [Syntax](#syntax) section mainly serves as a user guide for the formatting
 rather than an implementation reference. However, ALL rules explained in that
-section are REQUIRED be part of any implementation.
+section are REQUIRED to be part of any implementation.
 
 You're welcome to freely extend your implementation upon complying with this
 specification.
