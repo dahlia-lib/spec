@@ -40,9 +40,11 @@ interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 You're welcome to freely extend your implementation upon complying with this
 specification.
 
+
 ## Syntax
 
 ### Basic formatting
+
 Basic Dahlia formatting is done by using a marker (`&` by default) followed by a
 [color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list below.
 All codes are 1-character long.
@@ -50,18 +52,23 @@ All codes are 1-character long.
 <img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
 <img alt="Basic formatting: Styles" src="assets/styles.png" style="width: 75%">
 
+
 ### Custom colors
+
 Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to
 `&#0099cc;`) are allowed.
 
 <img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
 
+
 ### Background colors
+
 All colors can be applied to the background instead of the text by appending a
 `~` to the marker. For instance, `&~4` sets a red background.
 
 <img alt="Background color example" src="assets/background.png" style="width: 75%">
+
 
 ### Escaping
 
@@ -69,7 +76,9 @@ The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
 
 <img alt="Escaping example" src="assets/escaping.png" style="width: 75%">
 
+
 ### Resetting
+
 Applied formatting can be removed by using [reset codes](#ansi-reset-codes).
 `&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl`
 removes the bold formatting.
@@ -95,6 +104,7 @@ The methods/functions MUST include the following:
 * `print(self: Dahlia, ...) -> None`: converts and prints its input (for details
   on parameters see [Target language consistency](#target-language-consistency))
 
+
 ### Constructor parameters
 
 #### `auto_reset`
@@ -102,6 +112,7 @@ The methods/functions MUST include the following:
 The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
 `&R` by default) should be automatically appended to the end of the string if
 not present yet. It MUST be a boolean value and SHOULD default to `true`.
+
 
 #### `depth`
 
@@ -136,10 +147,12 @@ one can be supplied in the target language (e.g. through a type union or an
 option type). Otherwise, the aforementioned data types MUST accept an additional
 `Depth.AUTO`, `"auto"`, or `0` value, respectively.
 
+
 #### `marker`
 
 The `marker` parameter specifies the character used to mark the beginning of a
 Dahlia formatting code. It MUST be a single character and SHOULD default to `&`.
+
 
 ### Target language consistency
 
@@ -162,6 +175,7 @@ be named `cleanAnsi` when implemented in Java, since functions use `camelCase`
 there by convention. In cases where there's no prevalent style guide, you're
 free to pick the style you find most fitting.
 
+
 ### Environment variables
 
 #### `NO_COLOR`
@@ -180,6 +194,7 @@ fn convert(self: Dahlia, string: String) -> String {
     // actual processing
 }
 ```
+
 
 #### `TERM` and `COLORTERM`
 
@@ -202,6 +217,7 @@ If none of the above match, the depth SHOULD default to `4-bit`.
 
 Reading `COLORTERM` is preferred over `TERM` when set.
 
+
 ### Utility functions
 
 #### `clean`
@@ -212,6 +228,7 @@ string, except for the `&_` escape code which MUST be processed as usual:
 clean("&_4 gives &4red")
 // -> "&4 gives red"
 ```
+
 
 #### `clean_ansi`
 
