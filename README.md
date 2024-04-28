@@ -79,81 +79,21 @@ removes the bold formatting.
 
 ## API
 
-For object-oriented languages (and those capable of implementing an equivalent
-model, e.g. Rust with `struct` + `impl`):
-```ts
-enum Depth {
-    Tty = 3,
-    Low = 4,
-    Medium = 8,
-    High = 24
-}
-type DepthString = "tty" | "low" | "medium" | "high"
-type DepthInt = 3 | 4 | 8 | 24
+Depending on your target language, the following may either be a struct with
+standalone functions or a class with methods.
 
+The base struct/class MUST accept the following parameters in its constructor:
+* [`depth`](#depth)
+* [`auto_reset`](#auto_reset)
+* [`marker`](#marker)
 
-class Dahlia {
-    constructor(
-        depth: Depth | DepthString | DepthInt = Depth.Low,
-        noReset: boolean = false,
-        noColor: boolean? = null,
-        marker: char = '&'
-    ) {}
-
-    convert(str: string): string {}
-    input(prompt: string): string {}
-    print(...) {}
-    reset() {}
-    test() {}
-}
-```
-
-`Dahlia` instances SHOULD be:
-- hashable
-- comparable: using `depth`, `no_reset` and `marker` values
-- printable: preferably in a way that produces valid syntax, e.g.:
-  - Python: `Dahlia(depth=Depth.HIGH, no_reset=False, marker='&')`  
-  - Swift: `Dahlia(depth: Depth.high, no_reset: false, marker: '&')`
-
-Target languages CAN provide default parameter values.
-If they do, they SHOULD stick to defaults in the above code block.
-
----
-
-Other languages MUST implement the following functions:
-
-Method           | Function
-:---:            | :---:
-`Dahlia.convert` | `dahlia`
-`Dahlia.print`   | `dprint`
-`Dahlia.input`   | `dinput`
-
-```ts
-function dahlia(
-  str: string,
-  depth: Depth | DepthString | DepthInt = Depth.LOW,
-  noReset: boolean = false,
-  noColor: boolean? = null
-): string {}
-
-function dprint(
-  ...,
-  depth: Depth | DepthString | DepthInt = Depth.LOW,
-  noReset: boolean = false,
-  noColor: boolean? = null,
-  ...
-) {}
-
-function dinput(
-  prompt: string,
-  depth: Depth | DepthString | DepthInt = Depth.LOW,
-  noReset: boolean = false,
-  noColor: boolean? = null
-): string {}
-```
-
-Just like with the OO approach, target languages CAN provide default parameter
-values. If they do, they SHOULD stick to defaults in the above code block.
+The methods/functions MUST include the following:
+* `convert(self: Dahlia, string: String) -> String`: converts a Dahlia-formatted
+  string to ANSI (based on the instance's settings)
+* `input(self: Dahlia, prompt: String) -> String`: converts and prints a
+  Dahlia-formatted prompt and reads a line from stdin
+* `print(self: Dahlia, ...) -> None`: converts and prints its input (for details
+  on parameters see [Target language consistency](#target-language-consistency))
 
 ### Constructor parameters
 
