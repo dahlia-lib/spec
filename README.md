@@ -30,12 +30,14 @@
 
 `Welcome to &2Dahlia&R!` → `Welcome to \x1b[32mDahlia\x1b[0m!`
 
-This document describes the Dahlia library implementation specification in
-certain languages.
-
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
+
+This document describes the Dahlia library implementation specification. The
+[Syntax](#syntax) section mainly serves as a user guide for the formatting
+rather than an implementation reference. However, ALL rules explained in that
+section are REQUIRED be part of any implementation.
 
 You're welcome to freely extend your implementation upon complying with this
 specification.
@@ -91,7 +93,7 @@ removes the bold formatting.
 Depending on your target language, the following may either be a struct with
 standalone functions or a class with methods.
 
-The base struct/class MUST accept the following parameters in its constructor:
+The base struct/class SHALL accept the following parameters in its constructor:
 * [`depth`](#depth)
 * [`auto_reset`](#auto_reset)
 * [`marker`](#marker)
@@ -116,8 +118,8 @@ not present yet. It MUST be a boolean value and SHOULD default to `true`.
 
 #### `depth`
 
-The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ or 2²⁴ colors). All
-four depths MUST be supported.
+The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ or 2²⁴ colors). All four
+depths MUST be supported.
 
 At least one of the following data types SHOULD be allowed to represent the
 depth:
@@ -134,8 +136,8 @@ depth:
 * integers (one of `3`, `4`, `8`, `24`)
 
 This parameter SHOULD be as flexible as possible and so implementations SHOULD
-allow mixing these types (e.g. `Dahlia(depth: Depth.HIGH)` or
-`Dahlia(depth: "high")` SHOULD both be allowed and mean the same thing). If the
+allow mixing these types (e.g. `Dahlia(depth: Depth.HIGH)` and
+`Dahlia(depth: "high")` would both be allowed and mean the same thing). If the
 target language only allows one data type as input, the preference is enums >
 integers > strings (or integers > strings if enums don't exist or are
 inconvenient to use in the target language).
@@ -170,7 +172,7 @@ implementation (cf. [`dahlia-rs`](https://github.com/dahlia-lib/dahlia-rs) with
 its `dprint!` and `dprintln!` macros).
 
 Finally, all identifiers SHOULD follow the naming conventions of the target
-language. For instance, the utility function [`clean_ansi`](#clean_ansi) should
+language. For instance, the utility function [`clean_ansi`](#clean_ansi) SHOULD
 be named `cleanAnsi` when implemented in Java, since functions use `camelCase`
 there by convention. In cases where there's no prevalent style guide, you're
 free to pick the style you find most fitting.
@@ -198,7 +200,7 @@ fn convert(self: Dahlia, string: String) -> String {
 
 #### `TERM` and `COLORTERM`
 
-When `depth` is set to auto, The `TERM` and `COLORTERM` environment variables
+When `depth` is set to auto, the `TERM` and `COLORTERM` environment variables
 SHOULD be used to determine the color depth. The following values SHOULD be
 recognized (as regexes):
 
@@ -223,7 +225,7 @@ Reading `COLORTERM` is preferred over `TERM` when set.
 #### `clean`
 
 The `clean(string)` utility function MUST strip away all Dahlia codes from a
-string, except for the `&_` escape code which MUST be processed as usual:
+string, except for the `&_` escape code which SHALL be processed as usual:
 ```rs
 clean("&_4 gives &4red")
 // -> "&4 gives red"
