@@ -49,7 +49,7 @@ specification.
 
 Basic Dahlia formatting is done by using a marker (`&` by default) followed by a
 [color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list below.
-All codes are 1-character long.
+All basic color and style codes are 1-character long.
 
 <img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
 <img alt="Basic formatting: Styles" src="assets/styles.png" style="width: 75%">
@@ -93,7 +93,8 @@ removes the bold formatting.
 Depending on your target language, the following may either be a struct with
 standalone functions or a class with methods.
 
-The base struct/class SHALL accept the following parameters in its constructor:
+The base struct/class SHOULD be named `Dahlia` and SHALL accept the following
+parameters in its constructor:
 * [`depth`](#depth)
 * [`auto_reset`](#auto_reset)
 * [`marker`](#marker)
