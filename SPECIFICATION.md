@@ -225,10 +225,14 @@ Reading `COLORTERM` is preferred over `TERM` when set.
 
 #### `clean`
 
-The `clean(string)` utility function MUST strip away all Dahlia codes from a
-string, except for the `&_` escape code which SHALL be processed as usual:
+The `clean(string, marker)` utility function MUST strip away all Dahlia codes
+from a string, except for the `&_` escape code which SHALL be processed as
+usual. The `marker` parameter MUST follow the same rules as the regular
+[`marker`](#marker) parameter.
 ```rs
 clean("&_4 gives &4red")
+// -> "&4 gives red"
+clean("&4 gives §4red", marker="§")
 // -> "&4 gives red"
 ```
 
