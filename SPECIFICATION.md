@@ -122,7 +122,7 @@ The methods/functions MUST include the following:
 
 The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
 `&R` by default) should be automatically appended to the end of the string if
-not present yet. It MUST be a boolean value and SHOULD default to `true`.
+not present yet. It MUST be a boolean value and SHOULD default to true.
 
 
 #### `depth`
@@ -153,7 +153,7 @@ inconvenient to use in the target language).
 
 By default, the depth SHOULD be automatically determined based on the
 [`TERM` and `COLORTERM` environment variables](#term-and-colorterm). This
-behavior (and thus the default value) SHOULD be represented by a `None` value if
+behavior (and thus the default value) SHOULD be represented by a null value if
 one can be supplied in the target language (e.g. through a type union or an
 option type). Otherwise, the aforementioned data types MUST accept an additional
 `Depth.AUTO`, `"auto"`, or `0` value, respectively.
