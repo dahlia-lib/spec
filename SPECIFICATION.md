@@ -2,7 +2,7 @@
 
 - [Introduction](#introduction)
 - [Syntax](#syntax)
-  - [Basic formatting](#basic-formatting)
+  - [Standard formatting](#standard-formatting)
   - [Custom colors](#custom-colors)
   - [Background colors](#background-colors)
   - [Escaping](#escaping)
@@ -45,14 +45,14 @@ specification.
 
 ## Syntax
 
-### Basic formatting
+### Standard formatting
 
-Basic Dahlia formatting is done by using a marker (`&` by default) followed by a
-[color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list below.
-All basic color and style codes are 1-character long.
+Standard Dahlia formatting is done by using a marker (`&` by default) followed
+by a [color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list
+below. All standard color and style codes are 1-character long.
 
-<img alt="Basic formatting: Colors" src="assets/basic-colors.png" style="width: 75%">
-<img alt="Basic formatting: Styles" src="assets/styles.png" style="width: 75%">
+<img alt="Standard formatting: Colors" src="assets/standard-colors.png" style="width: 75%">
+<img alt="Standard formatting: Styles" src="assets/styles.png" style="width: 75%">
 
 > [!note]
 > The second image omits reset codes for brevity. To achieve the same output,
