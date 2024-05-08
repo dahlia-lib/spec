@@ -102,10 +102,10 @@ Depending on your target language, the following may either be a struct with
 standalone functions or a class with methods.
 
 The base struct/class SHOULD be named `Dahlia` and SHALL accept the following
-parameters in its constructor:
+parameters in its constructor (in order):
 * [`depth`](#depth)
-* [`auto_reset`](#auto_reset)
 * [`marker`](#marker)
+* [`auto_reset`](#auto_reset)
 
 The methods/functions MUST include the following:
 * `convert(self: Dahlia, string: String) -> String`: converts a Dahlia-formatted
@@ -117,13 +117,6 @@ The methods/functions MUST include the following:
 
 
 ### Constructor parameters
-
-#### `auto_reset`
-
-The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
-`&R` by default) should be automatically appended to the end of the string if
-not present yet. It MUST be a boolean value and SHOULD default to true.
-
 
 #### `depth`
 
@@ -163,6 +156,13 @@ option type). Otherwise, the aforementioned data types MUST accept an additional
 
 The `marker` parameter specifies the character used to mark the beginning of a
 Dahlia formatting code. It MUST be a single character and SHOULD default to `&`.
+
+
+#### `auto_reset`
+
+The `auto_reset` parameter specifies whether the full-reset code (`\033[0m`;
+`&R` by default) should be automatically appended to the end of the string if
+not present yet. It MUST be a boolean value and SHOULD default to true.
 
 
 ### Target language consistency
