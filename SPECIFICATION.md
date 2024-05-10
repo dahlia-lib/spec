@@ -30,20 +30,27 @@
 
 `Welcome to &2Dahlia&R!` → `Welcome to \x1b[32mDahlia\x1b[0m!`
 
+This document describes the Dahlia library implementation specification. Dahlia
+performs string replacements, where it scans text for its special codes and
+transforms them into standardized ANSI control sequences for coloring and font
+styling. Drawing inspiration from the formatting techniques in the game
+Minecraft, Dahlia is crafted with comfort and conciseness in mind.
+
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
-This document describes the Dahlia library implementation specification. The
-[Syntax](#syntax) section mainly serves as a user guide for the formatting
-rather than an implementation reference. However, ALL rules explained in that
-section are REQUIRED to be part of any implementation.
-
-You're welcome to freely extend your implementation upon complying with this
+You're welcome to freely extend your implementation upon complying with this 
 specification.
 
 
 ## Syntax
+
+> [!note]
+> This section mainly serves as a user guide for the formatting rather than an
+> implementation reference. However, ALL rules explained in that section are
+> REQUIRED to be part of any implementation.
+
 
 ### Standard formatting
 
