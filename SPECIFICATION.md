@@ -141,7 +141,7 @@ depth:
       HIGH    // 24-bit
     }
     ```
-* strings (one of `"tty"`, `"low"`, `"medium"`, `"high"`)
+* strings (one of `"tty"`, `"low"`, `"medium"`, `"high"`, all case-insensitive)
 * integers (one of `3`, `4`, `8`, `24`)
 
 This parameter SHOULD be as flexible as possible and so implementations SHOULD
