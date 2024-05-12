@@ -210,7 +210,7 @@ the [`clean` utility function](#clean):
 
 fn convert(self: Dahlia, string: String) -> String {
     if no_color {
-        return utils::clean(string);
+        return clean(string);
     }
     // actual processing
 }
