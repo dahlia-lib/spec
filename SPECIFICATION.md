@@ -258,11 +258,11 @@ When `depth` is set to auto, the `TERM` and `COLORTERM` environment variables
 SHOULD be used to determine the color depth. The following values SHOULD be
 recognized (as regexes):
 
-**`COLORTERM`** (24-bit):
+##### `COLORTERM` (24-bit)
 * `truecolor`
 * `24bit`
 
-**`TERM`**:
+##### `TERM`
 * `dumb` → same as `NO_COLOR=1`
 * anything containing `24-?bit` → `24-bit`
 * `terminator` → `24-bit`
