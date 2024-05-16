@@ -58,7 +58,23 @@ Standard Dahlia formatting is done by using a marker (`&` by default) followed
 by a [color](#ansi-color-codes)/[style](#ansi-style-codes) code from the list
 below. All standard color and style codes are 1-character long.
 
+<!--
+In:  &0black &1blue &2green &3cyan
+     &4red &5purple &6orange &7light gray
+     &8gray &9light blue &alime &bturquoise
+     &clight red &dpink &eyellow &fwhite
+Out: black blue green cyan
+     red purple orange light gray
+     gray light blue lime turquoise
+     light red pink yellow white
+-->
 <img alt="Standard formatting: Colors" src="assets/standard-colors.png" style="width: 75%">
+<!--
+In:  &hhide &iinverse &jdim &kblink
+     &lbold &mstrikethrough &nunderline &oitalic
+Out: hide inverse dim blink
+     bold strikethrough underline italic
+-->
 <img alt="Standard formatting: Styles" src="assets/styles.png" style="width: 75%">
 
 > [!note]
@@ -76,6 +92,10 @@ Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to
 `&#0099cc;`) are allowed.
 
+<!--
+In:  #&816adb;medium purple!
+Out: medium purple!
+-->
 <img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
 
 
@@ -84,6 +104,13 @@ Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 All colors can be applied to the background instead of the text by appending a
 `~` to the marker. For instance, `&~4` sets a red background.
 
+<!--
+In:  &9light blue foreground
+Out: light blue foreground
+
+In:  &~9light blue background
+Out: light blue background
+-->
 <img alt="Background color example" src="assets/background.png" style="width: 75%">
 
 
@@ -91,6 +118,10 @@ All colors can be applied to the background instead of the text by appending a
 
 The underscore serves as an escape code for Dahlia: `&_` gets converted to `&`.
 
+<!--
+In:  &_4 gives &4red
+Out: &4 gives red
+-->
 <img alt="Escaping example" src="assets/escaping.png" style="width: 75%">
 
 
@@ -100,6 +131,10 @@ Applied formatting can be removed by using [reset codes](#ansi-reset-codes).
 `&R` resets all formatting, while `&r` codes reset specific formats, e.g. `&rl`
 removes the bold formatting.
 
+<!--
+In:  &e&nunderlined&rn yellow
+Out: underlined yellow
+-->
 <img alt="Resetting example" src="assets/resetting.png" style="width: 75%">
 
 
