@@ -187,8 +187,8 @@ The **methods** MUST include the following:
 
 #### `depth`
 
-The `depth` parameter specifies the **color depth**. All four depths MUST be
-supported.
+The `depth` parameter specifies the **color depth**. All specified depths MUST
+be supported.
 
 At least one of the following data types SHOULD be allowed to represent the
 depth:
