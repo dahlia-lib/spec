@@ -1,6 +1,7 @@
 # Dahlia Specification
 
 - [Introduction](#introduction)
+- [Glossary](#glossary)
 - [Syntax](#syntax)
   - [Standard formatting](#standard-formatting)
   - [Arbitrary hex colors](#arbitrary-hex-colors)
@@ -40,8 +41,34 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
+Any words in bold are to be interpreted as defined in the [Glossary](#glossary).
+
 You're welcome to freely extend your implementation upon complying with this 
 specification.
+
+
+## Glossary
+
+**color depth**\
+The number of colors supported by a terminal emulator. This may be one of:
+* 2¹ (2) colors (no color)
+* 2³ (8) colors (common in TTYs)
+* 2⁴ (16) colors
+* 2⁸ (256) colors
+* 2²⁴ colors (true color).
+
+**method**\
+A unit of functionality that is associated with a **record**. This may either be
+a function taking the **record** as its first argument or a method of a class.
+
+**transform** (verb)\
+The process of converting a string with Dahlia codes to a string with ANSI
+codes. This includes stripping them away if the [`NO_COLOR`](#no_color)
+environment variable is set as well as handling the escape code.
+
+**record**\
+A unit holding information about a Dahlia instance. Depending on the target
+language, this may either be a struct or a class.
 
 
 ## Syntax
@@ -140,30 +167,27 @@ Out: underlined yellow
 
 ## API
 
-Depending on your target language, the following may either be a struct with
-standalone functions or a class with methods.
-
-The base struct/class SHOULD be named `Dahlia` and SHALL accept the following
+The base **record** SHOULD be named `Dahlia` and SHALL accept the following
 parameters in its constructor (in order):
 * [`depth`](#depth)
 * [`marker`](#marker)
 * [`auto_reset`](#auto_reset)
 
-The methods/functions MUST include the following:
-* `convert(self: Dahlia, string: String) -> String`: converts a Dahlia-formatted
-  string to ANSI (based on the instance's settings)
-* `input(self: Dahlia, prompt: String) -> String`: converts and prints a
-  Dahlia-formatted prompt and reads a line from stdin
-* `print(self: Dahlia, ...) -> None`: converts and prints its input (for details
-  on parameters see [Target language consistency](#target-language-consistency))
+The **methods** MUST include the following:
+* `convert(string: String) -> String`: **transforms** a string based on the
+  instance's settings
+* `input(prompt: String) -> String`: **transforms** and prints the prompt, then
+  reads a line from stdin
+* `print(...)`: **transforms** and prints its input (for details on parameters
+  see [Target language consistency](#target-language-consistency))
 
 
 ### Constructor parameters
 
 #### `depth`
 
-The `depth` parameter refers to color depth (2³, 2⁴, 2⁸ or 2²⁴ colors). All four
-depths MUST be supported.
+The `depth` parameter specifies the **color depth**. All four depths MUST be
+supported.
 
 At least one of the following data types SHOULD be allowed to represent the
 depth:
@@ -221,7 +245,7 @@ To feel native and intuitive within the context of respective programming
 languages, Dahlia implementations SHOULD aim to align with the conventions of
 and built-in solutions provided by the target language.
 
-For example, when implementing the `print` method/function in Python, it SHOULD
+For example, when implementing the `print` **method** in Python, it SHOULD
 accept `end`, `file`, `flush`, and `sep` parameters so that it's easier to move
 from the built-in `print` function.
 
