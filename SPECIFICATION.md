@@ -193,6 +193,11 @@ one can be supplied in the target language (e.g. through a type union or an
 option type). Otherwise, the aforementioned data types MUST accept an additional
 `Depth.AUTO`, `"auto"`, or `0` value, respectively.
 
+> [!warning]
+> This specification does not cover handling arbitrary hex colors for
+> non-truecolor depths. It is up to the implementation to either ignore the
+> code, quantize it to a lower depth or let the terminal emulator handle it.
+
 
 #### `marker`
 
