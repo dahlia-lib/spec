@@ -3,7 +3,7 @@
 - [Introduction](#introduction)
 - [Syntax](#syntax)
   - [Standard formatting](#standard-formatting)
-  - [Custom colors](#custom-colors)
+  - [Arbitrary hex colors](#arbitrary-hex-colors)
   - [Background colors](#background-colors)
   - [Escaping](#escaping)
   - [Resetting](#resetting)
@@ -86,7 +86,7 @@ Out: hide inverse dim blink
 > ```
 
 
-### Custom colors
+### Arbitrary hex colors
 
 Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 6-digit hexadecimal code. Shorthand codes like `&#09c;` (equivalent to
@@ -96,7 +96,7 @@ Any color can be used by using the `&#XXXXXX;` syntax, where `XXXXXX` is a
 In:  #&816adb;medium purple!
 Out: medium purple!
 -->
-<img alt="Custom color example" src="assets/custom-colors.png" style="width: 75%">
+<img alt="Arbitrary hex color example" src="assets/hex-colors.png" style="width: 75%">
 
 
 ### Background colors
