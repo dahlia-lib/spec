@@ -32,10 +32,11 @@
 `Welcome to &2Dahlia&R!` → `Welcome to \x1b[32mDahlia\x1b[0m!`
 
 This document describes the Dahlia library implementation specification. Dahlia
-performs string replacements, where it scans text for its special codes and
-transforms them into standardized ANSI control sequences for coloring and font
-styling. Drawing inspiration from the formatting techniques in the game
-Minecraft, Dahlia is crafted with comfort and conciseness in mind.
+is a text formatting library for the terminal, which performs string
+replacements by scanning text for Dahlia's special codes and transforms them
+into standardized ANSI control sequences for coloring and font styling. Drawing
+inspiration from the formatting techniques in the game Minecraft, Dahlia is
+crafted with comfort and conciseness in mind.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
