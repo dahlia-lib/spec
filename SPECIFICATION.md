@@ -76,7 +76,7 @@ environment variable is set as well as handling the escape code.
 
 > [!note]
 > This section mainly serves as a user guide for the formatting rather than an
-> implementation reference. However, ALL rules explained in that section are
+> implementation reference. However, ALL rules explained in this section are
 > REQUIRED to be part of any implementation.
 
 
