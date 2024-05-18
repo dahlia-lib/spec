@@ -62,14 +62,14 @@ The number of colors supported by a terminal emulator. This may be one of:
 A unit of functionality that is associated with a **record**. This may either be
 a function taking the **record** as its first argument or a method of a class.
 
+**record**\
+A unit holding information about a Dahlia instance. Depending on the target
+language, this may either be a struct or a class.
+
 **transform** (verb)\
 The process of converting a string with Dahlia codes to a string with ANSI
 codes. This includes stripping them away if the [`NO_COLOR`](#no_color)
 environment variable is set as well as handling the escape code.
-
-**record**\
-A unit holding information about a Dahlia instance. Depending on the target
-language, this may either be a struct or a class.
 
 
 ## Syntax
