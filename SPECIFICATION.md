@@ -69,7 +69,7 @@ language, this may either be a struct or a class.
 **transform** (verb)\
 The process of converting a string with Dahlia codes to a string with ANSI
 codes. This includes stripping them away if the [`NO_COLOR`](#no_color)
-environment variable is set as well as handling the escape code.
+environment variable is set as well as handling [the escape code](#escaping).
 
 
 ## Syntax
