@@ -105,9 +105,9 @@ Out: hide inverse dim blink
 -->
 <img alt="Standard formatting: Styles" src="assets/styles.png" style="width: 75%">
 
-> [!note]
-> The second image omits reset codes for brevity. To achieve the same output,
-> the input would have to be
+> [!important]
+> The second image omits reset codes for brevity (the output would actually have
+> the styles stacked). To achieve the same output, the input would have to be:
 > ```
 > &hhide&R &iinverse&R &jdim&R &kblink&R
 > &lbold&R &mstrikethrough&R &nunderline&R &oitalic
