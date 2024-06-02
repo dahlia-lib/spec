@@ -12,7 +12,7 @@ Versioning for Documents).
 
 ## Specification-compliant projects
 
-*None yet.*
+* [dahlia-lib/dahlia](https://github.com/dahlia-lib/dahlia) (Python)
 
 If you have a project that implements the Dahlia library specification:
 * feel free to open an issue/PR to add your repo to the list above (and if you'd
