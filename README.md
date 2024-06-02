@@ -10,11 +10,11 @@ The Dahlia specification is versioned according to [SemVerDoc] (Semantic
 Versioning for Documents).
 
 
-## Specification-compliant repos
+## Specification-compliant projects
 
 *None yet.*
 
-If you have a repo that implements the Dahlia library specification:
+If you have a project that implements the Dahlia library specification:
 * feel free to open an issue/PR to add your repo to the list above (and if you'd
   like, transfer it to the `dahlia-lib` organization),
 * consider adding the Dahlia specification badge to your project's README:
