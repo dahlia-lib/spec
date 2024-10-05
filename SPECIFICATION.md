@@ -1,4 +1,4 @@
-# Dahlia Specification v1.0.0
+# Dahlia Specification v1.1.0
 
 - [Introduction](#introduction)
 - [Glossary](#glossary)
@@ -311,7 +311,8 @@ Reading `COLORTERM` is preferred over `TERM` when set.
 The `clean(string, marker)` utility function MUST strip away all Dahlia codes
 from a string, except for the `&_` escape code which SHALL be processed as
 usual. The `marker` parameter MUST follow the same rules as the regular
-[`marker`](#marker) parameter.
+[`marker`](#marker) parameter. `clean` MAY be a **method** of the
+Dahlia **record** instead of a standalone function.
 ```rs
 clean("&_4 gives &4red")
 // -> "&4 gives red"
