@@ -230,6 +230,9 @@ The `marker` parameter specifies the character used to mark the beginning of a
 Dahlia formatting code. It MUST be a single character and MUST[^1] default to
 `&`.
 
+> [!tip]
+> If you're implementing Dahlia code matching using regular expressions, keep
+> in mind that some markers will require escaping (i.e. any of `^$.|()[\\*+?`).
 
 #### `auto_reset`
 
