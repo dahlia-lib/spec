@@ -9,7 +9,7 @@ and this project adheres to
 ## [v1.1.0] - 2024-10-05
 
 ### Added
-* Allowed `clean` to be a [**method**](SPECIFICATION.md#clean)
+* Allowed `clean` to be a [**method**](SPECIFICATION.md#glossary)
 
 ## [v1.0.0] - 2024-05-19
 
