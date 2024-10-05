@@ -1,4 +1,4 @@
-# Dahlia Specification v1.1.0
+# Dahlia Specification v1.2.0
 
 - [Introduction](#introduction)
 - [Glossary](#glossary)
