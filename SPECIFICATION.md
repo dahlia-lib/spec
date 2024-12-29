@@ -228,7 +228,8 @@ option type). Otherwise, the aforementioned data types MUST accept an additional
 
 The `marker` parameter specifies the character used to mark the beginning of a
 Dahlia formatting code. It MUST be a single character and MUST[^1] default to
-`&`.
+`&`. Implementations SHOULD allow any Unicode character as a marker, but
+are free to disallow certain sets characters if cumbersome to support.
 
 > [!tip]
 > If you're implementing Dahlia code matching using regular expressions, keep
